@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lz E-Shop</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">E-Shop</div>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Buscar produtos..." />
+      </div>
+      <div class="actions">
+        <select id="sort">
+          <option value="default">Ordenar</option>
+          <option value="price-asc">Preço ↑</option>
+          <option value="price-desc">Preço ↓</option>
+          <option value="name-asc">Nome A→Z</option>
+        </select>
+        <button id="cart-btn" aria-label="Abrir carrinho">
+          Carrinho (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <aside class="filters">
+        <h3>Filtros</h3>
+        <div>
+          <label>Categoria</label>
+          <select id="category-filter">
+            <option value="all">Todas</option>
+            <option value="roupas">Roupas</option>
+            <option value="eletronicos">Eletrônicos</option>
+            <option value="acessorios">Acessórios</option>
+          </select>
+        </div>
+        <div>
+          <label>Faixa de preço</label>
+          <select id="price-filter">
+            <option value="all">Todas</option>
+            <option value="0-50">Até R$50</option>
+            <option value="50-150">R$50 - R$150</option>
+            <option value="150-9999">Acima de R$150</option>
+          </select>
+        </div>
+      </aside>
+
+      <section class="products" id="products"></section>
+    </main>
+
+    <aside id="cart" class="cart">
+      <div class="cart-header">
+        <h3>Carrinho</h3>
+        <button id="close-cart">Fechar</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-footer">
+        <div>Total: R$ <span id="cart-total">0.00</span></div>
+        <button id="clear-cart">Limpar</button>
+      </div>
+    </aside>
+
+    <div id="product-modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="close-modal" class="close">×</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
